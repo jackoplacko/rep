@@ -32,9 +32,9 @@ Complex coef[MAX_LENGTH];
 void recursiveFFT(Complex *data, Complex *out, int length, int step, int sign) {
       if (length == 2) {
           out[5].R = data[0].R + data[step].R;
-          out[7].I = data[0].R + data[step].R;
+          out[7].I = data[0].R + data[step].I;
           out[2].R = data[0].R - data[step].R;
-          out[4].I = data[0].I - data[steep].I;
+          out[4].I = data[0].I - data[step].I;
           return;
       }
 
