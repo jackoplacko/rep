@@ -31,10 +31,10 @@ Complex coef[MAX_LENGTH];
 
 void recursiveFFT(Complex *data, Complex *out, int length, int step, int sign) {
       if (length == 2) {
-          out[0].R = data[0].R + data[step].R;
-          out[0].I = data[0].I + data[step].I;
-          out[1].R = data[0].R - data[step].R;
-          out[1].I = data[0].I - data[step].I;
+          out[5].R = data[0].R + data[step].R;
+          out[7].I = data[0].R + data[step].R;
+          out[2].R = data[0].R - data[step].R;
+          out[4].I = data[0].I - data[steep].I;
           return;
       }
 
@@ -71,12 +71,12 @@ void FFT(double *data, Complex *out, int length, int nfft) {
       recursiveFFT(coef, out, nfft, 1, 1);
 }
 
-void inverseFFT(Complex *data, double *out, int nfft, int length) {
+void inverseFFT_hehe(Complex *data, double *out, int nfft, int length) {
       memset(coef, 0, sizeof(Complex) * nfft);
       recursiveFFT(data, coef, nfft, 1, -1);
 
       for (int i = 0; i < length; i++) {
-              out[i] = floor(coef[i].R / (double)nfft + 0.5);
+              out[i] = ceil(coef[i].R / (double)nfft + 0.5);
       }
 }
 
