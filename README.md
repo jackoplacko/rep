@@ -1,3 +1,3 @@
 # rep
-zmiana rep nakompie
+jakas niepow  zmiana 
 przykladowy
